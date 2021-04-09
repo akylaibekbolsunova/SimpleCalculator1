@@ -5,16 +5,14 @@
     android:id="@+id/parent_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/first_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/second_container"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -22,10 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
+            android:gravity="end"
             android:padding="14dp"
             android:textColor="@color/gray"
-            android:textSize="55sp"
-            android:gravity="end"
+            android:maxLength="33"
+            android:textSize="56sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,32 +35,38 @@
             android:fontFamily="sans-serif-light"
             android:padding="26dp"
             android:text="0"
+            android:textDirection="rtl"
             android:textColor="@color/gray"
             android:textSize="34sp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first_txt" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@id/first_txt"
+            />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/second_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_container">
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:backgroundTint="#72DDDD"
+            app:icon="@drawable/ic_more_functions"
+            android:fontFamily="sans-serif-thin"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="14dp"
+            app:iconTint="@color/white"
+            />
 
 
         <GridLayout
             android:id="@+id/grid_layout_for_numbers"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#4C4B4B"
             android:columnCount="3"
+            app:layout_constraintTop_toBottomOf="@id/second_txt"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/grid_layout_for_signs"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/second_container"
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
@@ -122,12 +127,12 @@
 
             <TextView
                 android:id="@+id/sign_common_txt"
-                android:background="@null"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
+                android:background="@null"
+                android:fontFamily="sans-serif-thin"
                 android:gravity="center"
                 android:onClick="onClickButton"
-                android:fontFamily="sans-serif-thin"
                 android:text=","
                 android:textColor="@color/white"
                 android:textSize="42sp" />
@@ -141,7 +146,6 @@
             <TextView
                 android:id="@+id/sign_equal_txt"
                 style="@style/StyleForButton"
-                android:onClick="onClickButton"
                 android:text="=" />
 
 
@@ -151,72 +155,89 @@
             android:id="@+id/grid_layout_for_signs"
             android:layout_width="80dp"
             android:layout_height="0dp"
-            android:background="#686565"
+            android:background="@color/teal_200"
             android:columnCount="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/second_container">
-
+            app:layout_constraintTop_toBottomOf="@id/second_txt"
+>
             <TextView
                 android:id="@+id/sign_delete_txt"
-                android:background="@color/gray"
-                android:fontFamily="sans-serif-thin"
                 android:layout_rowWeight="1"
-                android:gravity="center"
                 android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                android:fontFamily="sans-serif-thin"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
                 android:text="c"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/sign_division_txt"
-                android:background="@color/gray"
-                android:fontFamily="sans-serif-thin"
+                android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                android:fontFamily="sans-serif-thin"
                 android:gravity="center"
                 android:onClick="onClickButton"
-                android:layout_columnWeight="1"
                 android:text="/"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/sign_multiply_txt"
-                android:background="@color/gray"
-                android:fontFamily="sans-serif-thin"
                 android:layout_rowWeight="1"
-                android:onClick="onClickButton"
-                android:gravity="center"
                 android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:onClick="onClickButton"
                 android:text="*"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
 
             <TextView
                 android:id="@+id/sign_minus_txt"
-                android:background="@color/gray"
-                android:fontFamily="sans-serif-thin"
                 android:layout_rowWeight="1"
-                android:gravity="center"
                 android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:onClick="onClickButton"
                 android:text="-"
-                android:textSize="24sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/sign_plus_txt"
-                android:background="@color/gray"
-                android:fontFamily="sans-serif-thin"
-                android:gravity="center"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:onClick="onClickButton"
                 android:text="+"
-                android:textSize="24sp" />
-
-
+                android:textSize="28sp" />
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@color/teal_200"
+                 />
         </GridLayout>
-
+<!--        <fragment-->
+<!--            android:id="@+id/more_functions_fragment"-->
+<!--            android:layout_width="330dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toTopOf="@id/grid_layout_for_signs"-->
+<!--            app:layout_constraintRight_toRightOf="@id/grid_layout_for_signs"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

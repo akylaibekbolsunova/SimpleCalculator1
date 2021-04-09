@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OtherFunctionFragment">
+    <GridLayout
+        android:id="@+id/grid_layout_for_more_functions"
+        android:layout_width="match_parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintVertical_weight="1"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"
+        android:columnCount="3"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/sin_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="sin" />
+
+        <TextView
+            android:id="@+id/cos_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="cos" />
+
+        <TextView
+            android:id="@+id/tan_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="tan" />
+
+        <TextView
+            android:id="@+id/ln_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="ln" />
+
+        <TextView
+            android:id="@+id/log_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="log" />
+
+        <TextView
+            android:id="@+id/percent_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="%" />
+
+
+        <TextView
+            android:id="@+id/pi_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="π" />
+
+        <TextView
+            android:id="@+id/e_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="е" />
+
+        <TextView
+            android:id="@+id/power_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="^" />
+
+        <TextView
+            android:id="@+id/open_bracket_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="(" />
+
+
+        <TextView
+            android:id="@+id/close_bracket_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text=")" />
+
+        <TextView
+            android:id="@+id/root_txt"
+            style="@style/StyleForOtherFunctions"
+            android:text="√" />
+
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
