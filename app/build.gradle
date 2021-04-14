@@ -32,9 +32,15 @@ repositories {
     maven {
         url  "https://dl.bintray.com/kaendagger/KParser"
     }
+
 }
 
+
+
+
+
 dependencies {
+
     implementation 'io.kaen.dagger:KParser-jvm:0.1.1'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
